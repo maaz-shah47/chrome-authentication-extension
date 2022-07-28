@@ -1,0 +1,32 @@
+{
+  "name": "Basic email login system",
+  "description": "testing basic email login system",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "assets/icon.png",
+      "24": "assets/icon.png",
+      "32": "assets/icon.png"
+    },
+    "default_title": "Youtube Bookmarks",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/1.png", "assets/2.png"],
+      "matches": ["https://*.youtube.com/*"]
+    }
+  ],
+  "permissions": ["storage", "tabs", "http://localhost:3000/"],
+  "host_permissions": ["*"]
+}
